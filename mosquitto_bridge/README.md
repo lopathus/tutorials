@@ -7,14 +7,14 @@ Mosquitto is a MQTT broker which Wirepas often uses to test its MQTT interface.
 The example in this repository builds on the
 [official docker image provided by the eclipse foundation][dockerhub].
 
-You will find a [Dockerfile][dockerfile]  and a configuration file
-([mosquitto.conf][mosquitto_conf]).
+You will find a [Dockerfile](mosquitto_bridge/dockerfile)  and a configuration file
+([mosquitto.conf](mosquitto_bridge/mosquitto.conf)).
 
 The Dockerfile contains additional layers added to the official
 image which expose certain build and run time parameters to help
-you customize the MQTT broker.
+you customize the MQTT broker. 
 
-The [mosquitto.conf][mosquitto_conf] allows to customize the broker and
+The [mosquitto.conf](mosquitto_bridge/mosquitto.conf) allows to customize the broker and
 its properties are [documented under the official documentation][mosquitto_help]
 
 ## Bridge setup
@@ -27,7 +27,7 @@ Therefore user controls which topics will be sent to WNT
 broker and not sent forward to WNT broker. This example limits the
 topics the bridge sends to WNT backend.
 
-Mosquitto configuration file ([mosquitto.conf][mosquitto_conf]) needs to be modified to
+Mosquitto configuration file ([mosquitto.conf](mosquitto_bridge/mosquitto.conf) needs to be modified to
 contain your WNT backend MQTT credential in order it be be able to
 send the data to WNT backend.
 
