@@ -8,7 +8,6 @@ persistence_location ${MQTT_PERSISTENCE_LOCATION:-"/mosquitto/data/"}
 
 sys_interval ${MQTT_SYS_INTERVAL:-300}
 autosave_interval ${MQTT_AUTOSAVE_INTERVAL:-60}
-store_clean_interval ${MQTT_STORE_CLEAN_INTERVAL:-20}
 
 queue_qos0_messages ${MQTT_QUEUE_QOS0_MESSAGES:-true}
 max_queued_messages ${MQTT_MAX_QUEUED_MESSAGES:-1000}
@@ -27,4 +26,4 @@ listener ${MQTT_LISTEN:-1883}
 protocol mqtt
 
 listener ${MQTT_WS_LISTENER:-9001}
-protocol websocket
+protocol websockets
