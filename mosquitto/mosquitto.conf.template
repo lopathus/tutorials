@@ -1,0 +1,30 @@
+# mount to /mosquitto/config/mosquitto.conf
+
+# if you want to specify an acl file you can set it by
+# acl_file /mosquitto/config/acl
+
+persistence ${MQTT_PERSISTENCE:-true}
+persistence_location ${MQTT_PERSISTENCE_LOCATION:-"/mosquitto/data/"}
+
+sys_interval ${MQTT_SYS_INTERVAL:-300}
+autosave_interval ${MQTT_AUTOSAVE_INTERVAL:-60}
+store_clean_interval ${MQTT_STORE_CLEAN_INTERVAL:-20}
+
+queue_qos0_messages ${MQTT_QUEUE_QOS0_MESSAGES:-true}
+max_queued_messages ${MQTT_MAX_QUEUED_MESSAGES:-1000}
+max_inflight_messages ${MQTT_MAX_INFLIGHT_MESSAGES:-1000}
+
+allow_anonymous ${MQTT_ALLOW_ANONYMOUS:-false}
+password_file ${MQTT_PASSWORD_FILE:-/mosquitto/config/passwd}
+
+
+connection_messages ${MQTT_CONNECTION_MESSAGES:-true}
+log_dest ${MQTT_LOG_DESTINATION:-stdout}
+
+persistent_client_expiration ${MQTT_PERSISTENT_CLIENT_EXPIRATION:-1h}
+
+listener ${MQTT_LISTEN:-1883}
+protocol mqtt
+
+listener ${MQTT_WS_LISTENER:-9001}
+protocol websocket

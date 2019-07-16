@@ -1,0 +1,5 @@
+# mount to /mosquitto/config/acl
+
+user ${MQTT_USESNAME:-"mqttuser"}
+topic readwrite #
+topic read \$SYS/#

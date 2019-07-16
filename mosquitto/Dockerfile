@@ -1,26 +1,23 @@
-# Wirepas Oy
-
-FROM eclipse-mosquitto:1.4.12
-
-# 1883 for local talk and 8883 for ssl
-EXPOSE 1883/tcp
-EXPOSE 8883/tcp
+FROM eclipse-mosquitto:1.6
 
 ARG MQTT_USERNAME
-ENV MOSQUITTO_USERNAME ${MQTT_USERNAME:-"mqttuser"}
-
 ARG MQTT_PASSWORD
-ENV MOSQUITTO_PASSWORD ${MQTT_PASSWORD:-"aoiuashn0p1284eydh190sa1237"}
 
-ENV MOSQUITTO_CONFIGURATION_DIR="/etc/mosquitto/conf.d"
+ENV MQTT_USERNAME=${MQTT_USERNAME:-mqttuser}
+ENV MQTT_PASSWORD=${MQTT_PASSWORD:-}
+
+ENV MOSQUITTO_CONFIGURATION_DIR="/mosquitto/config"
 ENV MOSQUITTO_CONFIGURATION_FILE="${MOSQUITTO_CONFIGURATION_DIR}/mosquitto.conf"
 ENV MOSQUITTO_PASSWORD_FILE="${MOSQUITTO_CONFIGURATION_DIR}/passwd"
+ENV MOSQUITTO_ACL_FILE="${MOSQUITTO_CONFIGURATION_DIR}/acl"
 
-RUN mkdir -p $MOSQUITTO_CONFIGURATION_DIR
+COPY *.template "${MOSQUITTO_CONFIGURATION_DIR}/"
 
-RUN touch $MOSQUITTO_PASSWORD_FILE
-RUN mosquitto_passwd -b $MOSQUITTO_PASSWORD_FILE $MOSQUITTO_USERNAME $MOSQUITTO_PASSWORD
-
-COPY mosquitto.conf ${MOSQUITTO_CONFIGURATION_FILE}
+# Replace entrypoint set by mosquitto
+# see https://github.com/docker-library/repo-info/blob/master/repos/eclipse-mosquitto/local/1.6.md
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
 CMD mosquitto -c ${MOSQUITTO_CONFIGURATION_FILE}
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
