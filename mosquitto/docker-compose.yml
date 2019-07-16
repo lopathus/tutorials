@@ -9,6 +9,10 @@ services:
 
         restart: always
 
+        environment:
+            - MQTT_USER=mqttuser
+            - MQTT_PASSWORD=aoiuashn0p1284eydh190sa1237
+
         ports:
             - 1883:1883
             - 8883:8883
