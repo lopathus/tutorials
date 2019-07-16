@@ -5,12 +5,12 @@ set -e
 
 MQTT_GENERATED_PASSWORD_SIZE=${MQTT_GENERATED_PASSWORD_SIZE:-25}
 
-function generate_settings
+generate_settings()
 {
     TEMPLATE=${1}
     OUTPUT_PATH=${2}
 
-    if [[ -f "${OUTPUT_PATH}" ]]
+    if [ -f "${OUTPUT_PATH}" ]
     then
         rm -f "${OUTPUT_PATH}" "${OUTPUT_PATH}.tmp"
     fi
@@ -35,11 +35,11 @@ generate_settings "${MOSQUITTO_ACL_FILE}.template" "${MOSQUITTO_ACL_FILE}"
 generate_settings "${MOSQUITTO_CONFIGURATION_FILE}.template" "${MOSQUITTO_CONFIGURATION_FILE}"
 
 
-if [ -z ${MQTT_PASSWORD} ]
+if [ -z "${MQTT_PASSWORD}" ]
 then
     MQTT_PASSWORD=$(</dev/urandom \
                     tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' \
-                    | head -c ${MQTT_GENERATED_PASSWORD_SIZE})
+                    | head -c "${MQTT_GENERATED_PASSWORD_SIZE}")
     echo "GENERATED PASSWORD: ${MQTT_PASSWORD}"
 fi
 
