@@ -1,8 +1,6 @@
 # Mosquitto
 
-
 Mosquitto is a MQTT broker which Wirepas often uses to test its MQTT interface.
-
 
 The example in this repository builds on the
 [official docker image provided by the eclipse foundation](https://hub.docker.com/_/eclipse-mosquitto).
@@ -11,10 +9,8 @@ You will find a [Dockerfile](./Dockerfile)  and a configuration file ([mosquitto
 
 The Dockerfile contains additional layers added to the official image which expose certain build and run time parameters to help you customize the MQTT broker.
 
-
 The [mosquitto.conf](./mosquitto.conf) allows to customize the broker and its properties.
 All the setting are documented at <https://mosquitto.org/man/mosquitto-conf-5.html>.
-
 
 ## Setting up your own MQTT broker
 

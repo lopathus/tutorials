@@ -8,13 +8,13 @@ at a backend level.
 
 In more detail this repository contains instructions on how to run:
 
-- [Mosquitto](https://github.com/wirepas/tutorials/tree/master/mosquitto): a MQTT broker  [homepage](https://mosquitto.org/);
+-   [Mosquitto](https://github.com/wirepas/tutorials/tree/master/mosquitto): a MQTT broker  [homepage](https://mosquitto.org/);
 
-- [Fluentd](https://github.com/wirepas/tutorials/tree/master/fluentd): a stream processor [homepage](https://www.fluentd.org/);
+-   [Fluentd](https://github.com/wirepas/tutorials/tree/master/fluentd): a stream processor [homepage](https://www.fluentd.org/);
 
-- [Elastic Search](https://github.com/wirepas/tutorials/tree/master/elastic_search): a search engine based on the Lucene library [homepage](https://www.elastic.co/products/elasticsearch);
+-   [Elastic Search](https://github.com/wirepas/tutorials/tree/master/elastic_search): a search engine based on the Lucene library [homepage](https://www.elastic.co/products/elasticsearch);
 
-- [Kibana](https://github.com/wirepas/tutorials/tree/master/elastic_search): an open source data visualization plugin for Elasticsearch [homepage](https://www.elastic.co/products/kibana).
+-   [Kibana](https://github.com/wirepas/tutorials/tree/master/elastic_search): an open source data visualization plugin for Elasticsearch [homepage](https://www.elastic.co/products/kibana).
 
 Under [cookbook](https://github.com/wirepas/tutorials/tree/master/cookbook)
 you will find useful receipts on how to put several of these services together.
@@ -81,7 +81,6 @@ Add the instruction to your *.bashrc* file in order to preserve the path between
 ## Docker builds
 
 You can retrieve public builds from [our registry in Docker hub][dockerhub].
-
 
 ## License
 

@@ -1,20 +1,18 @@
 # Mosquitto bridge
 
-
 Mosquitto is a MQTT broker which Wirepas often uses to test its MQTT interface.
-
 
 The example in this repository builds on the
 [official docker image provided by the eclipse foundation][dockerhub].
 
-You will find a [Dockerfile](mosquitto_bridge/dockerfile)  and a configuration file
-([mosquitto.conf](mosquitto_bridge/mosquitto.conf)).
+You will find a [Dockerfile][dockerfile]  and a configuration file
+([mosquitto.conf][mosquitto_conf]).
 
 The Dockerfile contains additional layers added to the official
 image which expose certain build and run time parameters to help
 you customize the MQTT broker. 
 
-The [mosquitto.conf](mosquitto_bridge/mosquitto.conf) allows to customize the broker and
+The [mosquitto.conf][mosquitto_conf] allows to customize the broker and
 its properties are [documented under the official documentation][mosquitto_help]
 
 ## Bridge setup
@@ -52,6 +50,9 @@ Navigate to this folder and run
 The broker will be started in the background.
 
 [dockerhub]: https://hub.docker.com/_/eclipse-mosquitto
-[dockerfile]: https://github.com/wirepas/tutorials/blob/master/mosquitto/Dockerfile
-[mosquitto_conf]: https://github.com/wirepas/tutorials/blob/master/mosquitto/mosquitto.conf
+
+[dockerfile]: https://github.com/wirepas/tutorials/blob/master/mosquitto_bridge/Dockerfile
+
+[mosquitto_conf]: https://github.com/wirepas/tutorials/blob/master/mosquitto_bridge/mosquitto.conf
+
 [mosquitto_help]: https://mosquitto.org/man/mosquitto-conf-5.html

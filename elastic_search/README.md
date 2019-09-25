@@ -16,54 +16,42 @@ Depending on your host and as [described in the official documentation][es_guide
 
 ### Linux
 
-```
-    The vm.max_map_count setting should be set permanently in /etc/sysctl.conf:
+        The vm.max_map_count setting should be set permanently in /etc/sysctl.conf:
 
-    $ grep vm.max_map_count /etc/sysctl.conf
-    vm.max_map_count=262144
+        $ grep vm.max_map_count /etc/sysctl.conf
+        vm.max_map_count=262144
 
-    To apply the setting on a live system type:
+        To apply the setting on a live system type:
 
-    $ sysctl -w vm.max_map_count=262144
-```
-
+        $ sysctl -w vm.max_map_count=262144
 
 ### macOS with Docker for Mac
 
-```
-    The vm.max_map_count setting must be set within the xhyve virtual machine:
+        The vm.max_map_count setting must be set within the xhyve virtual machine:
 
-    $ screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+        $ screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
 
-    Just press enter and configure the sysctl setting as you would for Linux:
+        Just press enter and configure the sysctl setting as you would for Linux:
 
-    sysctl -w vm.max_map_count=262144
-```
+        sysctl -w vm.max_map_count=262144
 
-### Windows and macOS with Docker Toolbox**
+### Windows and macOS with Docker Toolbox\*\*
 
-```
-    The vm.max_map_count setting must be set via docker-machine:
+        The vm.max_map_count setting must be set via docker-machine:
 
-    docker-machine ssh
-    sudo sysctl -w vm.max_map_count=262144
-```
-
+        docker-machine ssh
+        sudo sysctl -w vm.max_map_count=262144
 
 ## Starting elastic search
-
 
 In this repository you will find an example on our to setup a single node
 elasticsearch [docker-compose.yml][compose].
 
-
 **This setup is not recommended for production usage! Please refer to
 the official documentation if you are setting up a production oriented server.**
 
-
 The docker compose will start elasticsearch and attach it to an external
 docker network called *fluentd_stream_processing* and another internal network called *es*.
-
 
 The *fluentd_stream_processing* network must be created separately.
 Instructions on how to create it are found from [fluentd help](https://github.com/wirepas/tutorials/tree/master/fluentd).
@@ -108,7 +96,7 @@ you can search data for index app.ruuvi\*.
 **Figure 1 -** Kibana discover feed showing data for index app.ruuvi
 
 Setting a index requires that you head to the kibana management and
-create the index you desire, based on the \<tag\>.\<record\> of your choice.
+create the index you desire, based on the \\&lt;tag>.\\&lt;record> of your choice.
 
 Kibana will tell you if elasticsearch has data matching the index you are
 trying to match.
@@ -117,7 +105,9 @@ If there is no data, you first need to ensure that you have data present
 in such index.
 
 [compose]: https://github.com/wirepas/tutorials/blob/master/elastic_search/docker-compose.yml
+
 [es_guide]: https://www.elastic.co/guide/en/elastic-stack/7.1/index.html
+
 [es_guide_docker]: https://www.elastic.co/guide/en/elasticsearch/reference/7.1/docker.html
 
 [kibana_discover]: https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-discover.png

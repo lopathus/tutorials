@@ -44,5 +44,7 @@ The base for fluentd is inherited from the
 Extra plugins are defined and installed within the [Dockerfile][dockerfile].
 
 [dockerfile]: https://github.com/wirepas/tutorials/blob/master/fluentd/Dockerfile
+
 [compose]: https://github.com/wirepas/tutorials/blob/master/fluentd/docker-compose.yml
+
 [fluent_conf]: https://github.com/wirepas/tutorials/blob/master/fluentd/fluent.conf

@@ -23,4 +23,5 @@ To build and start the server type
 ```
 
 [sql]: https://github.com/wirepas/tutorials/tree/master/mysql/sql
+
 [dockerhub]: https://hub.docker.com/_/mysql

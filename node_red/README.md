@@ -55,8 +55,8 @@ In the example flow, the payload is converted to JSON and if it matches
 endpoints 238:238, it will decode the payload header sent by the
 Wirepas Mesh positioning application.
 
-[node_red_main_view]:  https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-flow.png 
+[node_red_main_view]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-flow.png
 
-[node_red_dialog_mqtt]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-dialog-mqtt.png 
+[node_red_dialog_mqtt]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-dialog-mqtt.png
 
-[node_red_dialog_mqtt_security]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-dialog-security.png 
+[node_red_dialog_mqtt_security]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-dialog-security.png

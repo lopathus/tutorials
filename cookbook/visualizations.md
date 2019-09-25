@@ -26,6 +26,7 @@ pass the build flag or command explicitly to the docker-compose utility, eg,
 ```bash
    docker-compose up -d --build
 ```
+
 or
 
 ```bash
@@ -122,7 +123,7 @@ everything seems to be in order inspect the stdout of the containers with
 
 <!-- Add gif of terminal status -->
 
-Open your browser and navigate to [http://localhost:5601](http://localhost:5601). Kibana will finish loading and after a few minutes you will be able to see its interface.
+Open your browser and navigate to <http://localhost:5601>. Kibana will finish loading and after a few minutes you will be able to see its interface.
 
 ### Setting up the backend client
 
@@ -177,7 +178,7 @@ The example decodes incoming messages according to the defined
 
 ### Configuring Kibana's dashboard
 
-Open your browser and navigate once again to Kibana's user interface in [http://localhost:5601](http://localhost:5601).
+Open your browser and navigate once again to Kibana's user interface in <http://localhost:5601>.
 
 Once kibana finishes loading, navigate to Management on the top left menu and click on *Saved Objects > Import*.
 
@@ -191,7 +192,7 @@ Click import on the right side menu and import the json file located at
    ${HOME}/wirepas/tutorials/elastic_search/dashboards/evk_ruuvi.json
 ```
 
-Once the import is done, navigate to Dashboard on Kibana's left menu and click on *\[WM\] Ruuvi Evk*.
+Once the import is done, navigate to Dashboard on Kibana's left menu and click on *\[WM] Ruuvi Evk*.
 The dashboard will display values regarding your device sensors as well as other network metrics.
 
 ![Kibana dashboard][kibana_dashboard]
@@ -205,13 +206,19 @@ An evaluation license will allow you to develop and build custom
 applications for your devices.
 
 <!-- Figures -->
-[wm_cookbook_viz_overview]:  https://github.com/wirepas/tutorials/blob/master/cookbook/img/cookbook-viz-overview.png
-[wm_cookbook_viz_video]:  https://github.com/wirepas/tutorials/blob/master/cookbook/img/visualization-quick-start.gif
-[wm_cookbook_viz_helper]:  https://github.com/wirepas/tutorials/blob/master/cookbook/visualizations_helper.sh
-[wm_cookbook_viz_compose]:  https://github.com/wirepas/tutorials/blob/master/cookbook/visualizations-docker-compose.yml
 
-[kibana_dashboard]:  https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-dashboard.png
-[kibana_discover]:  https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-discover.png
-[kibana_import]:   https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-import.png
+[wm_cookbook_viz_overview]: https://github.com/wirepas/tutorials/blob/master/cookbook/img/cookbook-viz-overview.png
 
-[node_red_main_view]:  https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-flow.png
+[wm_cookbook_viz_video]: https://github.com/wirepas/tutorials/blob/master/cookbook/img/visualization-quick-start.gif
+
+[wm_cookbook_viz_helper]: https://github.com/wirepas/tutorials/blob/master/cookbook/visualizations_helper.sh
+
+[wm_cookbook_viz_compose]: https://github.com/wirepas/tutorials/blob/master/cookbook/visualizations-docker-compose.yml
+
+[kibana_dashboard]: https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-dashboard.png
+
+[kibana_discover]: https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-discover.png
+
+[kibana_import]: https://github.com/wirepas/tutorials/blob/master/elastic_search/img/kibana-import.png
+
+[node_red_main_view]: https://github.com/wirepas/tutorials/blob/master/node_red/img/node-red-flow.png
