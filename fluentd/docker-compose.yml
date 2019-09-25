@@ -4,30 +4,30 @@
 version: '3'
 services:
 
-  fluentd:
-    container_name: wm-fluentd
-    image: wirepas/fluentd:latest
-    build: .
-    volumes:
-      - ./fluent.conf:/fluentd/etc/fluent.conf
-    restart: always
-    user: root
+    fluentd:
+        container_name: wm-fluentd
+        image: wirepas/fluentd:latest
+        build: .
+        volumes:
+            - ./fluent.conf:/fluentd/etc/fluent.conf
+        restart: always
+        user: root
 
-    networks:
-      - stream_processing
-    
-    logging:
-      driver: json-file
-      options:
-        max-size: "1M"
-        
-    ports:
-      - 24224:24224
-      - 24224:24224/udp
+        networks:
+            - stream_processing
+
+        logging:
+            driver: json-file
+            options:
+                max-size: "1M"
+
+        ports:
+            - 24224:24224
+            - 24224:24224/udp
 
 volumes:
-  esdata:
-    driver: local
+    esdata:
+        driver: local
 
 networks:
-  stream_processing:
+    stream_processing:
