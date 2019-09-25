@@ -1,6 +1,6 @@
 # Wirepas Oy
 
-FROM fluent/fluentd:v1.5
+FROM fluent/fluentd:v1.7
 USER root
 RUN apk add --update --virtual .build-deps \
         build-base ruby-dev \
