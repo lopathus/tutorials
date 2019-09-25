@@ -3,29 +3,27 @@
 # This docker compose is an example and should not be used for production
 # environments. This is solely for demonstration and evaluation purposes.
 #
-# For a successful setup please change the backend-client command
-# with the mqtt settings that apply to your case. Pay special attention
-# to the values in:
+# By default the backend-client will connect to the local broker defined in
+# the mqtt-broker service. If you want it to decode packets and obtain
+# data within kibana, please route your gateway traffic towards your
+# localhost at port 1883.
+#
+#
+# If you want to connect to an external broker, please review the following
+# settings (under the backend-client service enntry) carefully:
 #
 #            "--mqtt_hostname=< IP or hostname of your MQTT broker >",
 #            "--mqtt_username=< username >",
 #            "--mqtt_password=< password >",
+#            "--mqtt_force_unsecure",
+#
+# The force unsecure must be added when you are trying to connect to a
+# local broker on port 1883. Please remove the flag if you are trying
+# to connect against a remote/local secure broker.
 #
 # If you want to connect against the mqtt-broker service, the command
 # must be changed to
 #
-#        command: [
-#            "python",
-#            "examples/mqtt_viewer.py",
-#            "--mqtt_hostname=mqtt-broker",
-#            "--mqtt_username=mqttuser",
-#            "--mqtt_password=aoiuashn0p1284eydh190sa1237",
-#            "--mqtt_port=1883",
-#            "--mqtt_force_unsecure",
-#            "--fluentd_hostname=fluentd",
-#            "--fluentd_record=app",
-#            "--fluentd_tag=ruuvi"
-#        ]
 
 version: '2'
 services:
@@ -40,6 +38,9 @@ services:
         ports:
             - 1883:1883
             - 8883:8883
+        environment:
+            - MQTT_USERNAME=mqttuser
+            - MQTT_PASSWORD=mqttpassword
         logging:
             driver: json-file
             options:
@@ -58,7 +59,7 @@ services:
     # Handles the decoding of network packets
     backend-client:
         container_name: backend-client
-        image: wirepas/backend-client:latest
+        image: wirepas/backend-client:v1.2.0
         restart: always
         networks:
             - cookbook_visualization
@@ -67,13 +68,17 @@ services:
           - WM_DEBUG_LEVEL=info
           - PYTHONUNBUFFERED=true
 
+        user: wirepas
+        #working_dir: /home/wirepas/
+
         command: [
             "python",
-            "examples/mqtt_viewer.py",
-            "--mqtt_hostname=mqtthostname",
+            "/home/wirepas/.local/wirepas_backend_client-extras/examples/mqtt_viewer.py",
+            "--mqtt_hostname=mqtt-broker",
             "--mqtt_username=mqttuser",
             "--mqtt_password=mqttpassword",
-            "--mqtt_port=8883",
+            "--mqtt_port=1883",
+            "--mqtt_force_unsecure",
             "--fluentd_hostname=fluentd",
             "--fluentd_record=app",
             "--fluentd_tag=ruuvi"
