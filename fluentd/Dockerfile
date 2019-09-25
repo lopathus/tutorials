@@ -1,4 +1,4 @@
-# Wirepas Oy
+# Copyright 2019 Wirepas Ltd
 
 FROM fluent/fluentd:v1.7
 USER root

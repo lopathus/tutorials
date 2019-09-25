@@ -1,6 +1,6 @@
-# Wirepas Oy
+# Copyright 2019 Wirepas Ltd
 
-FROM mysql:latest
+FROM mysql:8.0
 
-ADD sql/ /docker-entrypoint-initdb.d/
+COPY sql/ /docker-entrypoint-initdb.d/
 

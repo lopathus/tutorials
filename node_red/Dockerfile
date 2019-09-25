@@ -1,4 +1,4 @@
-# Wirepas Oy
+# Copyright 2019 Wirepas Ltd
 
 FROM nodered/node-red-docker:v8
 
