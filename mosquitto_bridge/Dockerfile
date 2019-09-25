@@ -1,6 +1,6 @@
 # Wirepas Oy
 
-FROM eclipse-mosquitto:1.6.4
+FROM eclipse-mosquitto:1.6.6
 
 EXPOSE 1883/tcp
 EXPOSE 8883/tcp
