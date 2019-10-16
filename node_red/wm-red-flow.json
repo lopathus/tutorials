@@ -278,7 +278,7 @@
   },
   {
     "id": "21982a9a.a82546",
-    "protopath": "/data/protos/generic_message.proto",
+    "protopath": "/wirepas/protos/generic_message.proto",
     "type": "protobuf-file",
     "z": ""
   }
