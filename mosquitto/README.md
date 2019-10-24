@@ -19,7 +19,7 @@ This section guides you on how to setup a MQTT broker.
 If you have not done it yet, start by cloning the repository with:
 
 ```bash
-   git clone https://github.com/wirepas/evk.git  /home/${USER}/wirepas/tutorials
+   git clone https://github.com/wirepas/tutorials.git  /home/${USER}/wirepas/tutorials
 ```
 
 Change directory into the mosquitto folder
