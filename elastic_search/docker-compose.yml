@@ -6,7 +6,7 @@ services:
     # this is not recommended for production - you should have more es nodes
     elasticsearch:
         container_name: elasticsearch
-        image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
 
         environment:
             - discovery.type=single-node
