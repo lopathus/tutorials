@@ -9,15 +9,22 @@ version: '2'
 services:
     wm-mysql:
         container_name: wm-mysql
-        image: wirepas/mysql:latest
+        image: mysql/mysql-server:5.7
         build: .
 
+        # Both the default parameters:
+        #   WM_SERVICES_MYSQL_DATABASE
+        #   WM_SERVICES_MYSQL_USERNAME
+        #   WM_SERVICES_MYSQL_PASSWORD
+        # or the wirepas keys will be taken into use.
+        # The image defaults take precedence.
+        # To use this composition as is, make sure to set
+        # and export the WM_SERVICES_(...) parameters
         environment:
-            - MYSQL_RANDOM_ROOT_PASSWORD=yes
-            - MYSQL_DATABASE=mydatabase
-            - MYSQL_USER=myuser
-            - MYSQL_PASSWORD=mypwd
-
+            - MYSQL_DATABASE=${WM_SERVICES_MYSQL_DATABASE}
+            - MYSQL_USER=${WM_SERVICES_MYSQL_USERNAME}
+            - MYSQL_PASSWORD=${WM_SERVICES_MYSQL_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${WM_SERVICES_MYSQL_PASSWORD}
 
         restart: always
 

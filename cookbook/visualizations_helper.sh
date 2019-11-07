@@ -6,6 +6,10 @@ set -x
 
 PATH=${PATH}:${HOME}/.local/bin
 
+# MQTT password
+WM_SERVICES_MQTT_USERNAME=mqttuser
+WM_SERVICES_MQTT_PASSWORD=12390678afjh79034asd
+
 function install_sys_dep
 {
   # install pre-requisites
@@ -47,9 +51,7 @@ sudo docker-compose up -d --build --force-recreate
 
 # start mosquitto
 cd "/home/${USER}/wirepas/tutorials/mosquitto"
-echo "The broker will have default parameters"
 sudo docker-compose up -d --build --force-recreate
-
 
 # start backend client
 git clone https://github.com/wirepas/backend-client.git "/home/${USER}/wirepas/backend-client"
@@ -57,9 +59,9 @@ cd "/home/${USER}/wirepas/backend-client"
 
 cat <<HEREDOC >  "/home/${USER}/wirepas/backend-client/container/.settings.yml"
 
-mqtt_hostname: "localhost"
-mqtt_username: "mqttuser"
-mqtt_password: "aoiuashn0p1284eydh190sa1237"
+mqtt_hostname: localhost
+mqtt_username: ${WM_SERVICES_MQTT_USERNAME}
+mqtt_password: ${WM_SERVICES_MQTT_PASSWORD}
 mqtt_port: 1883
 mqtt_force_unsecure: true
 

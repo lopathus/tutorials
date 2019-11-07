@@ -39,8 +39,8 @@ services:
             - 1883:1883
             - 8883:8883
         environment:
-            - MQTT_USERNAME=mqttuser
-            - MQTT_PASSWORD=mqttpassword
+            - WM_SERVICES_MQTT_USERNAME=mqttuser
+            - WM_SERVICES_MQTT_PASSWORD=mqttpassword
         logging:
             driver: json-file
             options:
