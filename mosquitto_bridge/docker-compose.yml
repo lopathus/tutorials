@@ -19,4 +19,4 @@ services:
                 max-size: "1M"
 
         volumes:
-          - ./mosquitto.conf:/etc/mosquitto/conf.d/wirepas.conf
+          - ./mosquitto.conf:/etc/mosquitto/conf.d/mosquitto.conf
