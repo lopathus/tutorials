@@ -3,14 +3,14 @@
 Mosquitto is a MQTT broker which Wirepas often uses to test its MQTT interface.
 
 The example in this repository builds on the
-[official docker image provided by the eclipse foundation](https://hub.docker.com/_/eclipse-mosquitto).
+[official docker image provided by the eclipse foundation][mosquitto_dockerhub].
 
-You will find a [Dockerfile](./Dockerfile)  and a configuration file ([mosquitto.conf](./mosquitto.conf)).
+You will find a [Dockerfile][here_dockerfile]  and a configuration file ([mosquitto.conf][here_mqqt_conf]).
 
 The Dockerfile contains additional layers added to the official image which expose certain build and run time parameters to help you customize the MQTT broker.
 
-The [mosquitto.conf](./mosquitto.conf) allows to customize the broker and its properties.
-All the setting are documented at <https://mosquitto.org/man/mosquitto-conf-5.html>.
+The [mosquitto.conf][here_mqqt_conf] allows to customize the broker and its properties.
+All the setting are documented in [mosquitto's documention][mosquitto_docs].
 
 ## Setting up your own MQTT broker
 
@@ -28,8 +28,8 @@ Change directory into the mosquitto folder
    cd tutorials/mosquitto
 ```
 
-Customize the broker settings present in the [Dockerfile](https://github.com/wirepas/tutorials/blob/master/mosquitto/Dockerfile)
-and the [mosquitto.conf](https://github.com/wirepas/tutorials/blob/master/mosquitto/mosquitto.conf).
+Customize the broker settings present in the [Dockerfile][here_dockerfile]
+and the [mosquitto.conf][here_mqqt_conf].
 
 Start the broker with
 
@@ -51,7 +51,7 @@ or
 
 After these steps your message broker is ready to serve publishers and subscribers according to your credentials.
 
-For your information, the mosquitto broker has several [tools to help you inspect its status](https://github.com/eclipse/mosquitto).
+For your information, the mosquitto broker has several [tools to help you inspect its status][mosquitto_repo].
 
 To complete the setup and configure the gateway to communicate with the MQTT broker you instantiated you will need the:
 
@@ -62,3 +62,14 @@ To complete the setup and configure the gateway to communicate with the MQTT bro
 -   mosquitto username
 
 -   mosquitto password
+
+
+[mosquitto_repo]: https://github.com/eclipse/mosquitto
+
+[mosquitto_dockerhub]: https://hub.docker.com/_/eclipse-mosquitto 
+
+[mosquitto_docs]: https://mosquitto.org/man/mosquitto-conf-5.html
+
+[here_mqqt_conf]: https://github.com/wirepas/tutorials/blob/master/mosquitto/mosquitto.conf.template 
+
+[here_dockerfile]: https://github.com/wirepas/tutorials/blob/master/mosquitto/Dockerfile
