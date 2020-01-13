@@ -14,7 +14,7 @@ In more detail this repository contains instructions on how to run:
 
 -   [Elastic Search](https://github.com/wirepas/tutorials/tree/master/elastic_search): a search engine based on the Lucene library [homepage](https://www.elastic.co/products/elasticsearch);
 
--   [Kibana](https://github.com/wirepas/tutorials/tree/master/elastic_search): an open source data visualization plugin for Elasticsearch [homepage](https://www.elastic.co/products/kibana).
+-   [Kibana](https://github.com/wirepas/tutorials/tree/master/elastic_search#kibana): an open source data visualization plugin for Elasticsearch [homepage](https://www.elastic.co/products/kibana).
 
 Under [cookbook](https://github.com/wirepas/tutorials/tree/master/cookbook)
 you will find useful receipts on how to put several of these services together.
