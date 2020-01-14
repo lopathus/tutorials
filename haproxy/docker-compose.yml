@@ -1,0 +1,24 @@
+# Copyright 2019 Wirepas Ltd
+#
+# See official haproxy images at https://hub.docker.com/_/haproxy
+#
+
+version: '2'
+services:
+
+    haproxy:
+        container_name: haproxy
+        image: haproxy:2.0
+
+        restart: always
+        network_mode: host
+
+        volumes:
+            - ./haproxy.conf:/usr/local/etc/haproxy/haproxy.cfg
+            - ./bundle.pem:/etc/ssl/certs/bundle.pem
+            - ./ca.crt:/etc/ssl/certs/ca.crt
+            - ./root_crl.pem:/etc/ssl/certs/crl.pem
+
+        logging:
+            driver: journald
+
