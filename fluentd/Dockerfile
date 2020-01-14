@@ -1,12 +1,11 @@
 # Copyright 2019 Wirepas Ltd
 
-FROM fluent/fluentd:v1.7
+FROM fluent/fluentd:v1.8
 USER root
 RUN apk add --update --virtual .build-deps \
         build-base ruby-dev \
     && gem install \
         fluent-plugin-elasticsearch \
-        fluent-plugin-genhashvalue \
     && gem sources --clear-all \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* \
