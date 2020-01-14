@@ -2,7 +2,7 @@
 # Upstream image: https://hub.docker.com/r/nodered/node-red
 #
 
-FROM nodered/node-red:1.0.2
+FROM nodered/node-red:1.0.3
 ENV WIREPAS_FOLDER=/wirepas
 ENV FLOWS="${WIREPAS_FOLDER}/wm-red-flow.json"
 
