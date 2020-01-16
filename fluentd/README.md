@@ -43,6 +43,15 @@ The base for fluentd is inherited from the
 
 Extra plugins are defined and installed within the [Dockerfile][dockerfile].
 
+## FAQ
+
+*Fluentd throws **unexpected error error_class=NameError error="uninitialized constant Faraday::Error::ConnectionFailed"***
+
+Make sure that the host specified in the [fluent.conf][fluent_conf] is reachable and that its ip and port are correct. 
+The default configuration assumes that elastic search is available within the *fluentd_stream_processing* network (virtual
+docker network).
+
+
 [dockerfile]: https://github.com/wirepas/tutorials/blob/master/fluentd/Dockerfile
 
 [compose]: https://github.com/wirepas/tutorials/blob/master/fluentd/docker-compose.yml
