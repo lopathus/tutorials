@@ -9,7 +9,7 @@ version: '2'
 services:
     wm-mysql:
         container_name: wm-mysql
-        image: mysql/mysql-server:5.7
+        image: wirepas/mysql:latest
         build: .
 
         # Both the default parameters:
