@@ -1,6 +1,6 @@
 # Copyright 2019 Wirepas Ltd
 
-FROM fluent/fluentd:v1.8
+FROM fluent/fluentd:v1.11
 USER root
 RUN apk add --update --virtual .build-deps \
         build-base ruby-dev \
