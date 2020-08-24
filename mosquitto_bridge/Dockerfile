@@ -1,6 +1,6 @@
 # Copyright 2019 Wirepas Ltd
 
-FROM eclipse-mosquitto:1.6.8
+FROM eclipse-mosquitto:1.6.12
 
 EXPOSE 1883/tcp
 EXPOSE 8883/tcp
